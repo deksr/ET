@@ -1,0 +1,188 @@
+<script>
+
+var name = "girl"
+console.log("hiya" + name)
+
+var name = "girl", time = "today";
+console.log(`Hello ${name}, how are you ${time}?`
+);
+
+// **************
+
+console.log(`Give me a '\n' brea-k`
+)
+
+
+// ***********
+
+
+var gas = ["Hydrogen", "Helium", "Lithium", "Beryl­lium"];
+
+
+gas.map(function(somegas){
+ console.log(somegas.length ) 
+});
+
+
+gas.map(somegas =>
+ console.log(somegas.length + 1 ) 
+);
+
+
+gas.map(function(somegas, i){
+ console.log(somegas.length + i )
+
+});
+
+
+gas.map((somegas, i) =>
+ console.log(somegas + i) 
+);
+// ***********
+
+var alphabet = ["apple", "ball", "cat"];
+
+alphabet.forEach(function(some) {
+    console.log(some);
+    if (some === "ball"){
+    	console.log("take this ball");
+    }
+});
+
+
+alphabet.forEach(somealp => {
+  console.log(somealp);
+  if (somealp === "apple")
+  	console.log("here is an apple pie")
+  
+});
+
+// ***********
+
+
+
+var bob = {
+  _name: "Bob",
+  _friends: ["someguy"],
+  printFriends: function(){
+  	return "whatever"
+  } 
+}
+
+
+
+var bob = {
+  _name: "Bob",
+  _friends: ["Alex"],
+  printFriends() {
+    this._friends.forEach(f =>
+      console.log(this._name + " knows " + f));
+  }
+}
+
+
+console.log(bob.printFriends())
+// ***********
+// prototype - the mother of creations
+// it is a pointer to another object. We call this pointer the object's prototype. 
+
+
+// using function constructor, you set properties.
+function Godess(godessName){
+	this.name = godessName;
+}
+
+
+// Give extra features with methods/own methods.
+Godess.prototype.specialHandsOne = function(){
+  console.log(" I have flowers")
+}
+Godess.prototype.specialHandsTwo = function(){
+  console.log("I have books")
+}
+
+
+// Start creating objects. 
+var sharuStuff = new Godess("sharu")
+var lakStuff = new Godess ("laks")
+
+// calling methods on objects
+sharuStuff.specialHandsOne()
+sharuStuff.specialHandsTwo()
+
+
+
+// ***** esix------
+class Godess{
+	constructor(godessName){
+		this.name = godessName;
+	}
+ specialHandsOne(){
+   console.log("I have books")
+ }
+ specialHandsTwo(){
+   console.log("I have flowers")
+ }
+}
+
+var sharuStuff = new Godess("sharu")
+var lakStuff = new Godess ("laks")
+
+sharuStuff.specialHandsOne()
+sharuStuff.specialHandsTwo()
+
+
+
+// ************************
+function Human(name, location){
+	this.name = name;
+	this.place = location;
+
+	if (location == "earth"){
+		console.log("resides on earth ")
+	}
+	else {
+	  console.log("not an earthling")
+	}
+}
+
+function Girl(name, location){
+	// inherits from constructor
+  Human.call(this, name, location)
+  this.gender = "female"
+}
+
+function Guy(name, location){
+		// inherits from constructor
+	Human.call(this, name, location)
+  this.gender = "male"
+}
+
+var sampleOne= new Girl("somegirl", "mars")
+var sampleTwo = new Guy("someguy", "earth")
+
+// // ************** esix**********
+
+function Human(name, location){
+	this.name = name;
+	this.place = location;
+
+	if (location == "earth"){
+		console.log("resides on earth ")
+	}
+	else {
+	  console.log("not an earthling")
+	}
+}
+
+class Girl extends Human {
+	constructor(name, location){
+		super(name, location);
+		this.gender = "female"
+	};
+}
+
+var sampleOne= new Girl("somegirl", "mars")
+
+
+</script>
